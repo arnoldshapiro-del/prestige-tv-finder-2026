@@ -1,0 +1,14 @@
+{
+  "name": "Prestige TV Finder 2026",
+  "short_name": "TV Finder",
+  "description": "50 ranked prestige TV picks for 2026 with RT scores, IMDb ratings, and streaming platforms.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#38bdf8",
+  "orientation": "any",
+  "icons": [
+    { "src": "/favicon.ico", "sizes": "48x48", "type": "image/x-icon" },
+    { "src": "/favicon.ico", "sizes": "192x192", "type": "image/x-icon", "purpose": "any maskable" }
+  ]
+}

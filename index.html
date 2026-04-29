@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prestige TV Finder 2026 — Arnie & Ela's Watch List</title>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#38bdf8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="50 ranked prestige TV picks for 2026 — RT scores, IMDb ratings, and streaming platforms. Mobile-friendly.">
+<style>
+:root {
+  --bg:#07111f;--surface:rgba(13,20,40,.85);--line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.16);
+  --text:#f1f5f9;--text2:#cbd5e1;--muted:#94a3b8;
+  --gold:#fbbf24;--blue:#38bdf8;--violet:#a78bfa;--green:#4ade80;--amber:#fbbf24;--red:#f87171;
+  --shadow:0 20px 60px rgba(0,0,0,.45),0 4px 16px rgba(0,0,0,.28);
+  --shadow-sm:0 4px 20px rgba(0,0,0,.3);
+  --r:24px;--r-sm:14px;
+}
+body.light {
+  --bg:#f0f4f8;--surface:rgba(255,255,255,.9);--line:rgba(15,23,42,.08);--line2:rgba(15,23,42,.16);
+  --text:#0f172a;--text2:#334155;--muted:#64748b;
+  --shadow:0 8px 30px rgba(15,23,42,.13),0 2px 8px rgba(15,23,42,.08);
+  --shadow-sm:0 2px 12px rgba(15,23,42,.1);
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--text);background:var(--bg);min-height:100vh;line-height:1.5;
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -5%,rgba(56,189,248,.22) 0%,transparent 50%),
+    radial-gradient(ellipse 60% 40% at 90% 8%,rgba(167,139,250,.2) 0%,transparent 50%),
+    radial-gradient(ellipse 70% 60% at 50% 95%,rgba(251,191,36,.05) 0%,transparent 50%),
+    linear-gradient(170deg,#07111f 0%,#0e1a32 55%,#020617 100%);
+}
+body.light::before{
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -5%,rgba(56,189,248,.14) 0%,transparent 50%),
+    radial-gradient(ellipse 60% 40% at 90% 8%,rgba(167,139,250,.11) 0%,transparent 50%),
+    linear-gradient(170deg,#f0f4f8 0%,#e8eef5 55%,#f8fafc 100%);
+}
+.wrap{width:min(1200px,calc(100% - 28px));margin:0 auto;}
+
+/* HEADER */
+.header{padding:56px 14px 40px;border-bottom:1px solid var(--line2);}
+.kicker{
+  display:inline-flex;align-items:center;gap:7px;padding:6px 14px;
+  border:1px solid var(--line2);background:rgba(56,189,248,.1);color:var(--blue);
+  border-radius:999px;font-size:.74rem;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;margin-bottom:18px;
+}
+h1{
+  font-size:clamp(2.4rem,7vw,5.5rem);font-weight:900;letter-spacing:-.055em;
+  line-height:.92;margin:0 0 16px;
+  background:linear-gradient(135deg,var(--text) 40%,var(--blue));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+body.light h1{background:linear-gradient(135deg,#0f172a 40%,#0369a1);-webkit-background-clip:text;background-clip:text;}
+.lede{font-size:clamp(1rem,2.2vw,1.22rem);color:var(--muted);max-width:760px;margin:0;}
+.lede strong{color:var(--text2);}
+.hstats{display:flex;gap:24px;flex-wrap:wrap;margin-top:26px;}
+.hstat{display:flex;flex-direction:column;gap:2px;}
+.hstat b{font-size:1.75rem;font-weight:900;letter-spacing:-.04em;color:var(--text);line-height:1;}
+.hstat span{font-size:.76rem;color:var(--muted);letter-spacing:.03em;}
+
+/* TOOLBAR */
+.toolbar{
+  position:sticky;top:0;z-index:30;
+  background:color-mix(in srgb,var(--bg) 82%,transparent);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--line2);
+}
+.toolbarInner{
+  width:min(1200px,calc(100% - 20px));margin:0 auto;padding:10px 0;
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+}
+.toolSearch{flex:1 1 200px;min-width:140px;}
+.toolFilters{display:flex;gap:7px;flex:2 1 400px;flex-wrap:wrap;}
+.toolEnd{display:flex;gap:7px;align-items:center;flex-shrink:0;}
+input,select{
+  border:1px solid var(--line2);background:rgba(255,255,255,.07);color:var(--text);
+  border-radius:var(--r-sm);padding:9px 12px;font:inherit;font-size:.88rem;
+  outline:none;width:100%;transition:border-color .2s,background .2s;
+}
+body.light input,body.light select{background:rgba(255,255,255,.7);border-color:rgba(15,23,42,.15);}
+input:focus,select:focus{border-color:var(--blue);background:rgba(56,189,248,.07);}
+select option{color:#111827;background:#fff;}
+.btn{
+  cursor:pointer;border:1px solid var(--line2);background:rgba(255,255,255,.07);
+  color:var(--text);border-radius:var(--r-sm);padding:9px 14px;font:inherit;
+  font-size:.86rem;font-weight:600;white-space:nowrap;
+  transition:background .2s,border-color .2s,transform .1s;
+}
+.btn:hover{background:rgba(255,255,255,.14);}
+.btn:active{transform:scale(.97);}
+.btn.active{background:rgba(251,191,36,.16);border-color:rgba(251,191,36,.38);color:var(--gold);}
+
+/* PLATFORM STRIP */
+.pstrip{border-bottom:1px solid var(--line);padding:7px 0;overflow-x:auto;scrollbar-width:none;}
+.pstrip::-webkit-scrollbar{display:none;}
+.pchips{width:min(1200px,calc(100% - 20px));margin:0 auto;display:flex;gap:6px;padding:2px 0;}
+.pchip{
+  cursor:pointer;display:inline-flex;align-items:center;gap:5px;padding:4px 11px;
+  border-radius:999px;font-size:.76rem;font-weight:600;white-space:nowrap;
+  border:1px solid var(--line2);background:rgba(255,255,255,.05);color:var(--muted);
+  transition:all .18s;flex-shrink:0;
+}
+.pchip:hover,.pchip.on{background:rgba(255,255,255,.12);color:var(--text);}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* MAIN */
+main{padding:24px 0 80px;}
+.section{margin:0 0 28px;}
+.countRow{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:12px;margin:0 0 18px;flex-wrap:wrap;
+}
+.countRow h2{font-size:clamp(1.4rem,3.5vw,2.1rem);font-weight:800;letter-spacing:-.04em;margin:0;}
+.countRow .sub{color:var(--muted);font-size:.88rem;margin:4px 0 0;}
+.btnrow{display:flex;gap:7px;flex-wrap:wrap;}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;}
+
+/* CARD */
+.card{
+  grid-column:span 6;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  box-shadow:var(--shadow);overflow:hidden;
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  position:relative;transition:transform .25s ease,box-shadow .25s ease;
+  animation:fadeUp .35s ease both;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow),0 0 0 1px var(--line2);}
+.card.top{grid-column:span 12;}
+.card .accent{height:4px;width:100%;background:#64748b;}
+.cardInner{padding:20px 22px 22px;}
+.card.top .cardInner{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+.col-left{}
+.col-right{display:flex;flex-direction:column;gap:12px;}
+
+/* CARD HEAD */
+.cardHead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px;}
+.titleBlock h3{
+  font-size:clamp(1.05rem,2.4vw,1.5rem);font-weight:800;letter-spacing:-.03em;
+  line-height:1.15;margin:0 0 5px;
+}
+.card.top .titleBlock h3{font-size:clamp(1.2rem,3vw,1.9rem);}
+.metarow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.8rem;color:var(--muted);}
+.platbadge{
+  display:inline-flex;align-items:center;padding:2px 9px;border-radius:999px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;
+  background:var(--pbg,#555);color:var(--pfg,#fff);
+}
+.rankbadge{
+  min-width:44px;height:44px;border-radius:14px;
+  background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.25);
+  color:var(--gold);font-weight:900;font-size:1rem;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.card.top .rankbadge{min-width:56px;height:56px;font-size:1.35rem;border-radius:18px;}
+
+/* SCORES */
+.scores{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:14px 0;}
+.card.top .scores{grid-template-columns:repeat(4,1fr);}
+.scoreitem{
+  background:rgba(255,255,255,.05);border:1px solid var(--line);
+  border-radius:var(--r-sm);padding:10px 12px;
+}
+body.light .scoreitem{background:rgba(15,23,42,.04);}
+.slabel{
+  font-size:.68rem;color:var(--muted);font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;display:block;margin-bottom:4px;
+}
+.sval{
+  font-size:1.3rem;font-weight:800;letter-spacing:-.03em;
+  display:block;line-height:1;margin-bottom:5px;
+}
+.sval.g{color:var(--green);}.sval.a{color:var(--amber);}.sval.r{color:var(--red);}.sval.m{color:var(--muted);}
+.sbar{height:4px;background:rgba(255,255,255,.1);border-radius:999px;overflow:hidden;}
+body.light .sbar{background:rgba(15,23,42,.1);}
+.sbarfill{height:100%;border-radius:999px;transition:width .45s ease;}
+
+/* CARD BODY */
+.summary{color:var(--muted);font-size:.88rem;margin:0 0 10px;line-height:1.55;}
+.whybox{
+  background:rgba(74,222,128,.07);border:1px solid rgba(74,222,128,.2);
+  border-radius:var(--r-sm);padding:12px 14px;font-size:.87rem;
+  color:var(--text2);line-height:1.52;
+}
+.whybox strong{
+  color:var(--green);font-size:.7rem;letter-spacing:.05em;
+  text-transform:uppercase;display:block;margin-bottom:3px;
+}
+.tags{display:flex;flex-wrap:wrap;gap:5px;}
+.tag{
+  display:inline-flex;padding:3px 9px;border-radius:999px;
+  border:1px solid var(--line2);background:rgba(255,255,255,.05);
+  color:var(--muted);font-size:.72rem;font-weight:500;
+}
+.acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;}
+.act{
+  display:inline-flex;align-items:center;gap:4px;padding:6px 12px;
+  border-radius:999px;font-size:.79rem;font-weight:600;
+  border:1px solid var(--line2);background:rgba(255,255,255,.06);
+  color:var(--muted);cursor:pointer;text-decoration:none;
+  transition:all .18s;white-space:nowrap;
+}
+.act:hover{background:rgba(255,255,255,.13);color:var(--text);}
+.act.fav[data-on="true"]{
+  background:rgba(251,191,36,.14);border-color:rgba(251,191,36,.35);color:var(--gold);
+}
+
+/* DETAILS */
+.details{
+  display:none;margin-top:12px;padding:14px;
+  background:rgba(0,0,0,.22);border-radius:var(--r-sm);
+  border:1px solid var(--line);font-size:.84rem;color:var(--muted);
+}
+body.light .details{background:rgba(15,23,42,.05);}
+.details p{margin:0 0 5px;}.details p:last-child{margin:0;}
+.card.open .details{display:block;}
+
+/* EMPTY */
+.empty{grid-column:span 12;text-align:center;padding:60px 20px;color:var(--muted);}
+.empty h3{font-size:1.4rem;margin:0 0 8px;color:var(--text);}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line2);padding:28px 0 48px;color:var(--muted);font-size:.86rem;}
+.footrow{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;}
+footer strong{color:var(--text);}
+footer p{margin:5px 0 0;}
+footer a{color:var(--blue);text-decoration:none;}
+footer a:hover{text-decoration:underline;}
+
+/* ANIMATION */
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+.card:nth-child(1){animation-delay:.03s;}.card:nth-child(2){animation-delay:.06s;}
+.card:nth-child(3){animation-delay:.09s;}.card:nth-child(4){animation-delay:.12s;}
+.card:nth-child(5){animation-delay:.15s;}.card:nth-child(6){animation-delay:.18s;}
+.card:nth-child(7){animation-delay:.21s;}.card:nth-child(8){animation-delay:.24s;}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .card.top .cardInner{grid-template-columns:1fr;}
+  .card.top .scores{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:768px){
+  .card,.card.top{grid-column:span 12;}
+  .toolbarInner{padding:8px 0;}
+  .toolFilters{flex:1 1 100%;}
+  .header{padding:38px 14px 26px;}
+}
+@media(max-width:520px){
+  .hstats{gap:16px;}
+  .scores,.card.top .scores{grid-template-columns:repeat(2,1fr);}
+}
+@media print{
+  .toolbar,.pstrip,.acts,.btnrow{display:none!important;}
+  body{background:#fff;color:#000;}
+  body::before{display:none;}
+  .card{box-shadow:none;break-inside:avoid;transform:none!important;border:1px solid #ddd;}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <div class="kicker">🎬 Prestige TV Finder &nbsp;·&nbsp; Updated April 28, 2026</div>
+    <h1>Stop scrolling.<br>Start watching.</h1>
+    <p class="lede">
+      50 hand-ranked 2026 TV recommendations — with verified RT critic & audience scores,
+      refreshed IMDb ratings, and confirmed streaming platforms. Built for
+      <strong>Arnie &amp; Ela</strong>. Works on desktop and Android.
+    </p>
+    <div class="hstats">
+      <div class="hstat"><b>50</b><span>Ranked shows</span></div>
+      <div class="hstat"><b>12+</b><span>Platforms covered</span></div>
+      <div class="hstat"><b>RT&nbsp;+&nbsp;IMDb</b><span>Real scores only</span></div>
+      <div class="hstat"><b>2026</b><span>Release window</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toolbar" aria-label="Filters">
+  <div class="toolbarInner">
+    <div class="toolSearch">
+      <input id="search" type="search" placeholder="Search shows, genres, platforms…" autocomplete="off">
+    </div>
+    <div class="toolFilters">
+      <select id="platform"><option value="">All platforms</option></select>
+      <select id="kind">
+        <option value="">All types</option>
+        <option>New series</option>
+        <option>Returning season</option>
+        <option>New limited series</option>
+        <option>New docuseries</option>
+        <option>New/revival series</option>
+      </select>
+      <select id="tone"><option value="">All genres / tones</option></select>
+      <select id="sort">
+        <option value="rank">Best overall ↓</option>
+        <option value="fit">Best taste fit ↓</option>
+        <option value="rt">RT score ↓</option>
+        <option value="audience">Audience score ↓</option>
+        <option value="newest">Newest first</option>
+      </select>
+    </div>
+    <div class="toolEnd">
+      <button class="btn" id="favBtn" onclick="toggleFavView()">⭐ Saved</button>
+      <button class="btn" id="themeBtn" onclick="toggleTheme()">🌙 Dark</button>
+    </div>
+  </div>
+</nav>
+
+<div class="pstrip"><div class="pchips" id="pchips"></div></div>
+
+<main>
+  <div class="wrap">
+    <section class="section">
+      <div class="countRow">
+        <div>
+          <h2 id="rTitle">50 recommendations</h2>
+          <p class="sub" id="rSub">Tap any card to expand full details.</p>
+        </div>
+        <div class="btnrow">
+          <button class="btn" onclick="copyTop10()">📋 Copy top 10</button>
+          <button class="btn" onclick="window.print()">🖨️ Print / PDF</button>
+          <button class="btn" onclick="resetAll()">↺ Reset</button>
+        </div>
+      </div>
+      <div id="cards" class="grid"></div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap footrow">
+    <div>
+      <strong>Prestige TV Finder 2026</strong>
+      <p>Scores from Rotten Tomatoes 2026 guide &amp; IMDb. Unverified IMDb scores marked "Not available."</p>
+      <p>Save as home screen shortcut for instant access on iPhone &amp; Android.</p>
+    </div>
+    <div style="text-align:right">
+      <p>Sources: <a href="https://editorial.rottentomatoes.com/guide/best-new-tv-series-shows/" target="_blank" rel="noopener">RT 2026 Best TV</a> &nbsp;·&nbsp; <a href="https://www.imdb.com/" target="_blank" rel="noopener">IMDb</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const SHOWS=[
+{"rank":1,"title":"The Pitt","season":"Season 2","kind":"Returning season","premiere":"2026-01-08","platform":"Max (HBO)","rt":98,"audience":85,"imdb":"8.9","imdbNote":"8.9/10 — verified from IMDb.","fit":99,"genre":["Medical","Drama","Workplace"],"tone":["Intense","Human","Realistic"],"summary":"A real-time hospital drama following an emergency department through brutal, emotionally loaded shifts.","why":"This is the most direct match to your taste: adult, urgent, realistic, morally serious, and emotionally exhausting in the best possible way. Rare prestige procedural where every episode matters.","watch":"Max (HBO)","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":2,"title":"Industry","season":"Season 4","kind":"Returning season","premiere":"2026-01-11","platform":"Max (HBO)","rt":96,"audience":72,"imdb":"7.5","imdbNote":"7.5/10 — verified April 2026.","fit":98,"genre":["Drama","Finance","Thriller"],"tone":["Sharp","Dark","Adult"],"summary":"Young bankers, traders, and strivers tear each other apart inside the pressure cooker of high finance.","why":"For an Ozark/Breaking Bad/The Americans viewer, this is one of the best prestige-adjacent options — ruthless, smart, adult, and deeply character-driven.","watch":"Max (HBO)","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":3,"title":"Dark Winds","season":"Season 4","kind":"Returning season","premiere":"2026-02-15","platform":"AMC+","rt":100,"audience":72,"imdb":"Not available","imdbNote":"Season 4 individual episodes rate 8.0–8.4 on IMDb; no aggregate series score surfaced. Check IMDb directly.","fit":97,"genre":["Crime","Mystery","Western noir"],"tone":["Moody","Atmospheric","Serious"],"summary":"A brooding Navajo Nation crime drama with investigations, grief, politics, and beautifully controlled tension.","why":"This belongs near the top: atmosphere, mystery, cultural specificity, and crime-story gravity without feeling generic. Perfect 100% RT.","watch":"AMC+","source":"Rotten Tomatoes 2026 premiere calendar"},
+{"rank":4,"title":"A Knight of the Seven Kingdoms","season":"Season 1","kind":"New series","premiere":"2026-01-18","platform":"Max (HBO)","rt":94,"audience":78,"imdb":"8.7","imdbNote":"8.7/10 — verified from IMDb.","fit":96,"genre":["Fantasy","Adventure","Drama"],"tone":["Epic","Character-driven","Literate"],"summary":"A smaller, more personal return to Westeros, built around a knight-and-squire story rather than giant battlefield spectacle.","why":"Not exactly Ozark, but it has elite production, character stakes, violence, honor, shame, and political pressure. Very high ceiling.","watch":"Max (HBO)","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":5,"title":"The Night Manager","season":"Season 2","kind":"Returning season","premiere":"2026-01-11","platform":"Prime Video","rt":88,"audience":61,"imdb":"Not available","imdbNote":"Season 2 IMDb aggregate score not surfaced at time of publication. Check IMDb directly.","fit":96,"genre":["Espionage","Thriller","Drama"],"tone":["Elegant","Tense","Adult"],"summary":"A glamorous, dangerous spy thriller centered on deception, global power, and personal compromise.","why":"For fans of The Americans, this is one of the most natural fits: espionage, identity, danger, polished acting, and moral ambiguity.","watch":"Prime Video","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":6,"title":"Tehran","season":"Season 3","kind":"Returning season","premiere":"2026-01-09","platform":"Apple TV+","rt":100,"audience":84,"imdb":"7.6","imdbNote":"7.6/10 — verified April 2026 (overall series).","fit":95,"genre":["Espionage","Thriller","International"],"tone":["Suspenseful","Political","High-stakes"],"summary":"A tense international spy thriller about intelligence work, survival, and deception.","why":"Strong pick for The Americans energy: cover identities, mission pressure, fear, betrayal, and geopolitical stakes. 100% on RT.","watch":"Apple TV+","source":"Rotten Tomatoes 2026 premiere calendar"},
+{"rank":7,"title":"Ponies","season":"Season 1","kind":"New series","premiere":"2026-01-15","platform":"Peacock","rt":96,"audience":83,"imdb":"7.1","imdbNote":"7.1/10 — verified April 2026.","fit":94,"genre":["Espionage","Buddy thriller","Drama"],"tone":["Clever","Lighter","Suspenseful"],"summary":"Two American women in 1970s Moscow become wrapped in spy work after tragedy changes their lives.","why":"A very promising espionage choice with enough buddy-adventure energy to keep it moving. Good when you want spy tension without total bleakness.","watch":"Peacock","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":8,"title":"Margo's Got Money Troubles","season":"Season 1","kind":"New series","premiere":"2026-04-15","platform":"Apple TV+","rt":97,"audience":83,"imdb":"7.1","imdbNote":"7.1/10 — verified from IMDb.","fit":93,"genre":["Comedy-drama","Family","Character drama"],"tone":["Smart","Messy","Human"],"summary":"A young mother in financial crisis tries to survive, reinvent herself, and keep her dignity intact.","why":"Less crime-thriller, more character electricity. The high score and cast make it a premium Apple TV+ pick.","watch":"Apple TV+","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":9,"title":"The Comeback","season":"Season 3","kind":"Returning season","premiere":"2026-03-22","platform":"Max (HBO)","rt":97,"audience":82,"imdb":"7.9","imdbNote":"7.9/10 — verified from IMDb.","fit":91,"genre":["Satire","Comedy-drama","Hollywood"],"tone":["Cringe","Brilliant","Adult"],"summary":"Lisa Kudrow returns as Valerie Cherish in a painful, funny, media-savvy satire about fame and humiliation.","why":"Not a crime drama, but elite TV is elite TV. If you like shows that understand people at their most exposed and desperate, this is high-value.","watch":"Max (HBO)","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":10,"title":"Hacks","season":"Season 5","kind":"Returning season","premiere":"2026-04-09","platform":"Max (HBO)","rt":100,"audience":60,"imdb":"8.3–8.7 (S5 eps)","imdbNote":"Individual Season 5 episode ratings range 8.3–8.7 on IMDb; no single aggregate score.","fit":90,"genre":["Comedy-drama","Showbiz","Character"],"tone":["Sharp","Funny","Acidic"],"summary":"Deborah Vance and Ava continue their volatile, funny, emotionally complicated professional partnership.","why":"One of the best-written ongoing comedies. Not Ozark-like, but prestige-level dialogue and performances across every episode.","watch":"Max (HBO)","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":11,"title":"The Fall and Rise of Reggie Dinkins","season":"Season 1","kind":"New series","premiere":"2026-02-23","platform":"NBC / Peacock","rt":100,"audience":73,"imdb":"6.6","imdbNote":"6.6/10 — verified from IMDb.","fit":86,"genre":["Comedy","Sports","Redemption"],"tone":["Funny","Warm","Ensemble"],"summary":"A disgraced former football star tries to rebuild his reputation and life.","why":"The critic score is huge, but the audience/IMDb fit is lower for your taste. Good if you want something lighter between heavy dramas.","watch":"Peacock","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":12,"title":"Mel Brooks: The 99 Year Old Man!","season":"Season 1","kind":"New docuseries","premiere":"2026-01-22","platform":"Max (HBO)","rt":100,"audience":95,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":85,"genre":["Documentary","Comedy history","Biography"],"tone":["Affectionate","Funny","Reflective"],"summary":"A warm retrospective on Mel Brooks, comedy, aging, and creative survival.","why":"Not a prestige drama, but the ratings are excellent. Best as a palate cleanser when you want quality without darkness.","watch":"Max (HBO)","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":13,"title":"Star Wars: Maul – Shadow Lord","season":"Season 1","kind":"New series","premiere":"2026-04-06","platform":"Disney+","rt":98,"audience":89,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":84,"genre":["Animation","Sci-fi","Action"],"tone":["Kinetic","Dark","Stylized"],"summary":"An animated Star Wars story focused on Maul and the darker corners of the franchise.","why":"High ratings, but only a top fit if you like animated prestige genre work. Strong craft, less grounded adult drama.","watch":"Disney+","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":14,"title":"Beef","season":"Season 2","kind":"Returning season","premiere":"2026-04-16","platform":"Netflix","rt":87,"audience":60,"imdb":"Not available","imdbNote":"Season 2 IMDb score not surfaced at time of publication. Overall series S1 was 8.0.","fit":92,"genre":["Dark comedy","Drama","Class satire"],"tone":["Uncomfortable","Volatile","Smart"],"summary":"A new chapter of the rage-and-class-satire anthology with sharp performers and escalating conflict.","why":"For Breaking Bad/Ozark fans, the appeal is moral messiness and bad decisions spiraling out of control.","watch":"Netflix","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":15,"title":"Paradise","season":"Season 2","kind":"Returning season","premiere":"2026-02-23","platform":"Hulu","rt":90,"audience":82,"imdb":"7.8","imdbNote":"7.8/10 — verified April 2026 (overall series).","fit":92,"genre":["Political thriller","Mystery","Drama"],"tone":["Twisty","Emotional","High-concept"],"summary":"A conspiracy thriller mixing political danger, secrets, murder, and character drama.","why":"One of the better 'watch with full attention' thriller options: mysterious, plot-heavy, and emotionally direct.","watch":"Hulu","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":16,"title":"Jo Nesbø's Detective Hole","season":"Season 1","kind":"New series","premiere":"2026-03-26","platform":"Netflix","rt":91,"audience":76,"imdb":"Not available","imdbNote":"IMDb numerical score not surfaced. Metacritic user score: 7.7. Check IMDb directly.","fit":91,"genre":["Crime","Mystery","Nordic noir"],"tone":["Grim","Stylish","Twisty"],"summary":"A stylish, bleak detective thriller adapted from Jo Nesbø's crime universe.","why":"Very strong fit for serious crime-drama viewers. Exactly the kind of dark, twisty Netflix thriller that can hit when done well.","watch":"Netflix","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":17,"title":"Daredevil: Born Again","season":"Season 2","kind":"Returning season","premiere":"2026-03-24","platform":"Disney+","rt":90,"audience":88,"imdb":"Not available","imdbNote":"Season 2 is mid-run (premiered March 2026). Individual S2 episodes rate 8.0–9.3. No aggregate S2 score yet.","fit":88,"genre":["Superhero","Crime","Action drama"],"tone":["Gritty","Moral","Violent"],"summary":"Street-level superhero crime drama with legal, moral, and violent underworld stakes.","why":"A good fit if you like crime and moral conflict but can tolerate Marvel packaging.","watch":"Disney+","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":18,"title":"For All Mankind","season":"Season 5","kind":"Returning season","premiere":"2026-03-27","platform":"Apple TV+","rt":90,"audience":53,"imdb":"8.1","imdbNote":"8.1/10 — verified April 2026 (overall series).","fit":87,"genre":["Alt-history","Sci-fi","Drama"],"tone":["Ambitious","Political","Character-driven"],"summary":"Alternate-history space drama about politics, families, ambition, and national rivalry.","why":"Great if you want prestige scale and long-arc storytelling. Less crime-driven, more institutional and historical.","watch":"Apple TV+","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":19,"title":"Shrinking","season":"Season 3","kind":"Returning season","premiere":"2026-01-28","platform":"Apple TV+","rt":91,"audience":85,"imdb":"8.1","imdbNote":"8.1/10 — verified April 2026 (overall series).","fit":86,"genre":["Comedy-drama","Therapy","Grief"],"tone":["Warm","Funny","Emotional"],"summary":"A grief-and-therapy comedy-drama about flawed people trying to help each other while barely holding themselves together.","why":"As a psychiatrist, you may enjoy and/or yell at it. High-quality emotional television, though not a dark thriller.","watch":"Apple TV+","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":20,"title":"The Boys","season":"Season 5","kind":"Returning season","premiere":"2026-04-08","platform":"Prime Video","rt":95,"audience":75,"imdb":"8.6","imdbNote":"8.6/10 — verified April 2026.","fit":86,"genre":["Satire","Superhero","Action"],"tone":["Violent","Cynical","Darkly funny"],"summary":"The anti-superhero satire continues with corporate power, propaganda, violence, and grotesque absurdity.","why":"Not subtle, but often brilliant. If you want dark, outrageous, morally rotten TV, it scratches a similar itch.","watch":"Prime Video","source":"Rotten Tomatoes 2026 premiere calendar"},
+{"rank":21,"title":"The Testaments","season":"Season 1","kind":"New series","premiere":"2026-04-08","platform":"Hulu","rt":88,"audience":73,"imdb":"Not available","imdbNote":"Conflicting scores appeared in search results; no confirmed number. Check IMDb directly.","fit":88,"genre":["Dystopian","Drama","Literary adaptation"],"tone":["Severe","Slow-burn","Political"],"summary":"A continuation of the Handmaid's Tale world through a new coming-of-age and resistance lens.","why":"Bleak, political, adult, and serious. Heavy, but clearly belongs in the prestige conversation.","watch":"Hulu","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":22,"title":"Your Friends & Neighbors","season":"Season 2","kind":"Returning season","premiere":"2026-04-03","platform":"Apple TV+","rt":89,"audience":68,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":87,"genre":["Crime","Suburban satire","Drama"],"tone":["Slick","Wry","Adult"],"summary":"A satirical look at wealthy social life, crime, image-management, and bad behavior.","why":"Jon Hamm plus social-status crime is very watchable. Good for fans of glossy moral rot.","watch":"Apple TV+","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":23,"title":"Cross","season":"Season 2","kind":"Returning season","premiere":"2026-02-11","platform":"Prime Video","rt":95,"audience":56,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":85,"genre":["Crime","Detective","Thriller"],"tone":["Serious","Procedural","Dark"],"summary":"A crime thriller built around Alex Cross investigations, violence, psychology, and pursuit.","why":"A decent fit when you want crime and investigation more than prestige nuance.","watch":"Prime Video","source":"Rotten Tomatoes 2026 premiere calendar"},
+{"rank":24,"title":"The Lincoln Lawyer","season":"Season 4","kind":"Returning season","premiere":"2026-02-05","platform":"Netflix","rt":100,"audience":79,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":84,"genre":["Legal","Crime","Drama"],"tone":["Bingeable","Slick","Mainstream"],"summary":"A fast-moving legal mystery series with cases, reversals, and courtroom strategy.","why":"Not as deep as Breaking Bad, but very watchable and cleanly plotted.","watch":"Netflix","source":"Rotten Tomatoes 2026 premiere calendar"},
+{"rank":25,"title":"Invincible","season":"Season 4","kind":"Returning season","premiere":"2026-03-18","platform":"Prime Video","rt":100,"audience":86,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":83,"genre":["Animation","Superhero","Sci-fi"],"tone":["Violent","Emotional","Epic"],"summary":"Animated superhero carnage with family trauma, betrayal, and cosmic stakes.","why":"If animation is okay, this has more emotional and moral weight than most superhero shows.","watch":"Prime Video","source":"Rotten Tomatoes 2026 premiere calendar"},
+{"rank":26,"title":"One Piece","season":"Season 2","kind":"Returning season","premiere":"2026-03-10","platform":"Netflix","rt":100,"audience":95,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":80,"genre":["Adventure","Fantasy","Action"],"tone":["Fun","Big-hearted","Stylized"],"summary":"A colorful live-action fantasy-adventure continuation with extremely strong audience response.","why":"Huge scores, but the vibe is not your core dark-drama lane. Try only if you want joyful adventure.","watch":"Netflix","source":"Rotten Tomatoes 2026 premiere calendar"},
+{"rank":27,"title":"Ted","season":"Season 2","kind":"Returning season","premiere":"2026-03-05","platform":"Peacock","rt":100,"audience":90,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":78,"genre":["Comedy","R-rated sitcom"],"tone":["Crude","Funny","Fast"],"summary":"A foul-mouthed comedy continuation of the Ted universe.","why":"Scores are great, but this is a comedy break, not a prestige-drama replacement.","watch":"Peacock","source":"Rotten Tomatoes 2026 premiere calendar"},
+{"rank":28,"title":"Outlander","season":"Season 8","kind":"Returning season","premiere":"2026-03-06","platform":"STARZ","rt":100,"audience":null,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":82,"genre":["Historical drama","Romance","Adventure"],"tone":["Sweeping","Romantic","Dramatic"],"summary":"The long-running historical romance-adventure reaches another high-scoring season.","why":"A quality pick if you enjoy big emotional historical storytelling, though it is not close to Ozark tonally.","watch":"STARZ","source":"Rotten Tomatoes 2026 premiere calendar"},
+{"rank":29,"title":"Drops of God","season":"Season 2","kind":"Returning season","premiere":"2026-01-26","platform":"Apple TV+","rt":92,"audience":null,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":86,"genre":["Drama","Mystery","Food & wine"],"tone":["Elegant","Slow-burn","International"],"summary":"A sophisticated drama about inheritance, wine, family secrets, and competition.","why":"Quiet prestige. Good when you want adult drama without guns, cartels, or constant dread.","watch":"Apple TV+","source":"Rotten Tomatoes 2026 premiere calendar"},
+{"rank":30,"title":"A Thousand Blows","season":"Season 2","kind":"Returning season","premiere":"2026-01-09","platform":"Hulu","rt":93,"audience":79,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":87,"genre":["Historical crime","Drama","Boxing"],"tone":["Gritty","Physical","Period"],"summary":"A gritty historical drama set around boxing, gangs, survival, and ambition.","why":"For fans of violent social worlds and character pressure, this is a strong under-the-radar candidate.","watch":"Hulu","source":"Rotten Tomatoes 2026 premiere calendar"},
+{"rank":31,"title":"This City Is Ours","season":"Season 1","kind":"New series","premiere":"2026-03-05","platform":"AMC+","rt":93,"audience":92,"imdb":"Not available","imdbNote":"Series-level IMDb score not confirmed; S1 episodes rate 7.3–8.2. Check IMDb directly.","fit":94,"genre":["Crime","Family saga","Drama"],"tone":["Dark","Gangland","Serious"],"summary":"A crime-family saga about power, loyalty, succession, and violence.","why":"Very high fit for Ozark/Breaking Bad viewers. Crime-family saga with serious tone and strong audience response.","watch":"AMC+","source":"Rotten Tomatoes 2026 premiere calendar"},
+{"rank":32,"title":"American Classic","season":"Season 1","kind":"New series","premiere":"2026-03-01","platform":"MGM+","rt":94,"audience":76,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":80,"genre":["Comedy-drama","Family","Theater"],"tone":["Wry","Character-based","Offbeat"],"summary":"A character-centered comedy-drama with strong reviews and a more specialized appeal.","why":"Worth knowing about because the critic score is strong, but it may not be your first stop.","watch":"MGM+","source":"Rotten Tomatoes 2026 premiere calendar"},
+{"rank":33,"title":"DTF St. Louis","season":"Season 1","kind":"New series","premiere":"2026-03-01","platform":"Max (HBO)","rt":87,"audience":70,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":90,"genre":["Crime thriller","Dark comedy","Suburban"],"tone":["Sly","Strange","Criminal"],"summary":"A suburban crime thriller with strong performers and a strange, dark comedic edge.","why":"Jason Bateman plus David Harbour in a crime-adjacent story is very much worth flagging for your taste.","watch":"Max (HBO)","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":34,"title":"Jury Duty Presents: Company Retreat","season":"Season 1","kind":"New series","premiere":"2026-03-20","platform":"Prime Video","rt":89,"audience":89,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":78,"genre":["Comedy","Reality hybrid","Workplace"],"tone":["Gentle","Funny","Awkward"],"summary":"A continuation/spinoff of the Jury Duty concept, built around social comedy and hidden-camera absurdity.","why":"Not in your dark-drama lane, but the audience/critic alignment is strong.","watch":"Prime Video","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":35,"title":"Scrubs","season":"Season 1 revival","kind":"New/revival series","premiere":"2026-02-25","platform":"ABC / Hulu","rt":89,"audience":93,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":79,"genre":["Medical comedy","Dramedy","Revival"],"tone":["Warm","Funny","Heartfelt"],"summary":"A revival of the medical dramedy built around jokes, friendship, and hospital emotion.","why":"A strong comfort pick, especially after something grim. Not a prestige thriller.","watch":"Hulu","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":36,"title":"Rooster","season":"Season 1","kind":"New series","premiere":"2026-03-08","platform":"Max (HBO)","rt":88,"audience":69,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":79,"genre":["Comedy-drama","Character","Family"],"tone":["Kind","Warm","Easygoing"],"summary":"A warm new series with Steve Carell and Danielle Deadwyler, built around humor and heart.","why":"Less addictive than a crime thriller, but probably pleasant, human, and well-acted.","watch":"Max (HBO)","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":37,"title":"Something Very Bad Is Going to Happen","season":"Season 1","kind":"New series","premiere":"2026-03-26","platform":"Netflix","rt":87,"audience":62,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":88,"genre":["Horror","Thriller","Drama"],"tone":["Atmospheric","Uneasy","Surreal"],"summary":"A horror-tinged thriller about dread, marriage, atmosphere, and things going wrong.","why":"If you like creeping dread and psychological pressure, this is a worthwhile Netflix experiment.","watch":"Netflix","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":38,"title":"Reality Check: Inside America's Next Top Model","season":"Season 1","kind":"New docuseries","premiere":"2026-02-16","platform":"Netflix","rt":87,"audience":55,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":77,"genre":["Documentary","Pop culture","Industry exposé"],"tone":["Investigative","Nostalgic","Critical"],"summary":"A documentary look at the chaos, pressure, and cultural cost of America's Next Top Model.","why":"Interesting if you like behind-the-scenes systems and exploitation stories; not a drama replacement.","watch":"Netflix","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":39,"title":"Star Trek: Starfleet Academy","season":"Season 1","kind":"New series","premiere":"2026-01-15","platform":"Paramount+","rt":85,"audience":52,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":75,"genre":["Sci-fi","Academy drama","Adventure"],"tone":["Youthful","Optimistic","Franchise"],"summary":"A younger-skewing Star Trek entry set around cadets and academy life.","why":"Quality enough to include, but probably not your first choice unless you already like Trek.","watch":"Paramount+","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":40,"title":"Young Sherlock","season":"Season 1","kind":"New series","premiere":"2026-03-04","platform":"Prime Video","rt":84,"audience":83,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":84,"genre":["Mystery","Adventure","Period"],"tone":["Stylish","Clever","Energetic"],"summary":"A stylish, younger Sherlock Holmes adaptation with mystery, action, and Guy Ritchie flavor.","why":"Good if you want clever mystery with a lighter, more stylish feel.","watch":"Prime Video","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":41,"title":"Run Away","season":"Season 1","kind":"New series","premiere":"2026-01-01","platform":"Netflix","rt":83,"audience":39,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":82,"genre":["Mystery","Thriller","Harlan Coben"],"tone":["Twisty","Bingeable","Pulpy"],"summary":"A Harlan Coben thriller with family secrets, missing-person mystery, and rapid reversals.","why":"Not elite prestige, but it may scratch the addictive mystery itch.","watch":"Netflix","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":42,"title":"Bridgerton","season":"Season 4","kind":"Returning season","premiere":"2026-01-29","platform":"Netflix","rt":82,"audience":67,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":72,"genre":["Romance","Period","Drama"],"tone":["Glossy","Steamy","Escapist"],"summary":"The romantic period hit continues with another polished, fantasy-forward season.","why":"Good ratings, but not really your stated lane unless you want stylish escape.","watch":"Netflix","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":43,"title":"Love Story: John F. Kennedy Jr. & Carolyn Bessette","season":"Limited series","kind":"New limited series","premiere":"2026-02-12","platform":"FX / Hulu","rt":81,"audience":69,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":80,"genre":["Biography","Drama","Romance"],"tone":["Tragic","Glossy","Media-aware"],"summary":"A dramatization of the famous, tragic relationship between JFK Jr. and Carolyn Bessette.","why":"Potentially absorbing if you like prestige biography and media/fame psychology.","watch":"Hulu","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":44,"title":"Monarch: Legacy of Monsters","season":"Season 2","kind":"Returning season","premiere":"2026-02-27","platform":"Apple TV+","rt":79,"audience":82,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":76,"genre":["Monster drama","Sci-fi","Adventure"],"tone":["Big","Emotional","Spectacle"],"summary":"The Godzilla/MonsterVerse series continues with family drama and large-scale creature mythology.","why":"More genre spectacle than prestige thriller, but Apple production quality helps.","watch":"Apple TV+","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":45,"title":"Big Mistakes","season":"Season 1","kind":"New series","premiere":"2026-04-09","platform":"Netflix","rt":79,"audience":77,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":82,"genre":["Family crime","Comedy","Drama"],"tone":["Witty","Criminal","Ensemble"],"summary":"A family-crime sendup with a strong comic cast and satirical edge.","why":"May work if you want crime-family energy without the heaviness of Ozark.","watch":"Netflix","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":46,"title":"The Audacity","season":"Season 1","kind":"New series","premiere":"2026-04-12","platform":"AMC+","rt":78,"audience":56,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":81,"genre":["Silicon Valley satire","Drama","Comedy"],"tone":["Mean","Clever","Unpleasant"],"summary":"A tech-world farce about callous, ambitious, fascinating personalities.","why":"Potentially good if you like sharp, morally ugly people behaving badly.","watch":"AMC+","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":47,"title":"The 'Burbs","season":"Season 1","kind":"New series","premiere":"2026-02-08","platform":"Peacock","rt":78,"audience":68,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":74,"genre":["Comedy","Mystery","Suburban"],"tone":["Light","Odd","Comic"],"summary":"A TV remake with suburban suspicion, neighborhood weirdness, and comic paranoia.","why":"More snack than meal, but Keke Palmer makes it worth knowing about.","watch":"Peacock","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":48,"title":"Steal","season":"Season 1","kind":"New series","premiere":"2026-01-21","platform":"Prime Video","rt":78,"audience":67,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":84,"genre":["Heist","Thriller","Crime"],"tone":["Fast","Suspenseful","Stylish"],"summary":"A heist thriller with Sophie Turner and Archie Madekwe.","why":"A decent fit for crime-thriller nights, even if the scores are less overwhelming than the top picks.","watch":"Prime Video","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":49,"title":"Half Man","season":"Season 1","kind":"New series","premiere":"2026-04-23","platform":"Max (HBO)","rt":76,"audience":76,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":82,"genre":["Drama","Psychological","Dark comedy"],"tone":["Bleak","Unsettling","Masculinity-focused"],"summary":"A brooding, unsettling drama from Richard Gadd about masculinity, repression, and psychic damage.","why":"Not an easy watch, but the subject matter sounds adult and psychologically loaded.","watch":"Max (HBO)","source":"Rotten Tomatoes 2026 best TV guide"},
+{"rank":50,"title":"The Beauty","season":"Season 1","kind":"New series","premiere":"2026-01-21","platform":"FX / Hulu","rt":72,"audience":63,"imdb":"Not available","imdbNote":"IMDb score not surfaced at time of publication. Check IMDb directly.","fit":78,"genre":["Sci-fi horror","Satire","Drama"],"tone":["Gory","Gonzo","Provocative"],"summary":"A Ryan Murphy sci-fi horror satire about beauty standards, body horror, and cultural obsession.","why":"Lowest on this list because the scores are more mixed, but still potentially interesting if you like nasty, provocative TV.","watch":"Hulu","source":"Rotten Tomatoes 2026 best TV guide"}
+
+];
+
+const PC={
+  'Max (HBO)':{bg:'#8B5CF6',fg:'#fff'},
+  'Netflix':{bg:'#E50914',fg:'#fff'},
+  'Apple TV+':{bg:'#555',fg:'#fff'},
+  'Prime Video':{bg:'#00A8E0',fg:'#fff'},
+  'Hulu':{bg:'#1CE783',fg:'#000'},
+  'Disney+':{bg:'#113CCF',fg:'#fff'},
+  'Peacock':{bg:'#F59E0B',fg:'#000'},
+  'AMC+':{bg:'#EF4444',fg:'#fff'},
+  'Paramount+':{bg:'#3B82F6',fg:'#fff'},
+  'STARZ':{bg:'#9333EA',fg:'#fff'},
+  'FX / Hulu':{bg:'#F97316',fg:'#fff'},
+  'NBC / Peacock':{bg:'#F59E0B',fg:'#000'},
+  'ABC / Hulu':{bg:'#1CE783',fg:'#000'},
+  'MGM+':{bg:'#D97706',fg:'#fff'}
+};
+function pc(p){return PC[p]||{bg:'#64748b',fg:'#fff'};}
+function sc(v,hi){
+  if(typeof v!=='number')return 'm';
+  if(hi==='fit')return v>=90?'g':v>=75?'a':'r';
+  return v>=85?'g':v>=65?'a':'r';
+}
+function fmt(v){return typeof v==='number'?v+'%':'—';}
+function bar(v,cls){
+  if(typeof v!=='number')return '<div class="sbar"><div class="sbarfill" style="width:0"></div></div>';
+  const col={g:'#4ade80',a:'#fbbf24',r:'#f87171'}[cls]||'#38bdf8';
+  return `<div class="sbar"><div class="sbarfill" style="width:${Math.min(v,100)}%;background:${col}"></div></div>`;
+}
+function dt(iso){
+  return new Date(iso+'T12:00:00').toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'});
+}
+
+const E={
+  cards:document.getElementById('cards'),
+  search:document.getElementById('search'),
+  platform:document.getElementById('platform'),
+  kind:document.getElementById('kind'),
+  tone:document.getElementById('tone'),
+  sort:document.getElementById('sort'),
+  rTitle:document.getElementById('rTitle'),
+  rSub:document.getElementById('rSub'),
+  themeBtn:document.getElementById('themeBtn'),
+  favBtn:document.getElementById('favBtn')
+};
+let favOnly=false;
+let favs=new Set(JSON.parse(localStorage.getItem('tvFav26')||'[]'));
+
+function populateFilters(){
+  const plats=[...new Set(SHOWS.map(s=>s.platform))].sort();
+  plats.forEach(p=>{const o=document.createElement('option');o.value=o.textContent=p;E.platform.appendChild(o);});
+  const terms=[...new Set(SHOWS.flatMap(s=>[...s.genre,...s.tone]))].sort();
+  terms.forEach(t=>{const o=document.createElement('option');o.value=o.textContent=t;E.tone.appendChild(o);});
+  const chips=document.getElementById('pchips');
+  const all=document.createElement('button');
+  all.className='pchip on';all.textContent='All';
+  all.onclick=()=>setPlatform('',all);chips.appendChild(all);
+  plats.forEach(p=>{
+    const c=pc(p);
+    const btn=document.createElement('button');
+    btn.className='pchip';btn.dataset.p=p;
+    btn.innerHTML=`<span class="dot" style="background:${c.bg}"></span>${p}`;
+    btn.onclick=()=>setPlatform(p,btn);chips.appendChild(btn);
+  });
+}
+function setPlatform(p,el){
+  E.platform.value=p;
+  document.querySelectorAll('.pchip').forEach(c=>c.classList.toggle('on',c===el));
+  render();
+}
+function filtered(){
+  const q=E.search.value.trim().toLowerCase();
+  const pl=E.platform.value,ki=E.kind.value,to=E.tone.value;
+  let list=SHOWS.filter(s=>{
+    const h=[s.title,s.season,s.kind,s.platform,s.summary,s.why,...s.genre,...s.tone].join(' ').toLowerCase();
+    if(q&&!h.includes(q))return false;
+    if(pl&&s.platform!==pl)return false;
+    if(ki&&s.kind!==ki)return false;
+    if(to&&!s.genre.includes(to)&&!s.tone.includes(to))return false;
+    if(favOnly&&!favs.has(s.title))return false;
+    return true;
+  });
+  const sk=E.sort.value;
+  list.sort((a,b)=>{
+    if(sk==='fit')return b.fit-a.fit||a.rank-b.rank;
+    if(sk==='rt')return(typeof b.rt==='number'?b.rt:-1)-(typeof a.rt==='number'?a.rt:-1)||a.rank-b.rank;
+    if(sk==='audience')return(typeof b.audience==='number'?b.audience:-1)-(typeof a.audience==='number'?a.audience:-1)||a.rank-b.rank;
+    if(sk==='newest')return b.premiere.localeCompare(a.premiere)||a.rank-b.rank;
+    return a.rank-b.rank;
+  });
+  return list;
+}
+function cardHtml(s,i){
+  const top=s.rank<=5;
+  const fav=favs.has(s.title);
+  const c=pc(s.platform);
+  const rc=sc(s.rt,'rt'),ac=sc(s.audience,'rt'),fc=sc(s.fit,'fit');
+  const ic=s.imdb&&!s.imdb.startsWith('Not')&&!s.imdb.startsWith('Episode')?'g':'m';
+  const tags=[...s.genre,...s.tone].slice(0,7).map(t=>`<span class="tag">${t}</span>`).join('');
+  const delay=Math.min(i*.04,.5);
+  const scoreBlock=`
+    <div class="scores">
+      <div class="scoreitem"><span class="slabel">RT Critics</span><span class="sval ${rc}">${fmt(s.rt)}</span>${bar(s.rt,rc)}</div>
+      <div class="scoreitem"><span class="slabel">Audience</span><span class="sval ${ac}">${fmt(s.audience)}</span>${bar(s.audience,ac)}</div>
+      <div class="scoreitem"><span class="slabel">IMDb</span><span class="sval ${ic}">${s.imdb}</span><div class="sbar"></div></div>
+      <div class="scoreitem"><span class="slabel">Taste Fit</span><span class="sval ${fc}">${s.fit}</span>${bar(s.fit,fc)}</div>
+    </div>`;
+  const actions=`
+    <div class="acts">
+      <button class="act fav" data-on="${fav}" onclick="toggleFav(${JSON.stringify(s.title)},this)">${fav?'★ Saved':'☆ Save'}</button>
+      <button class="act" onclick="toggleDet(this)">${top?'Details':'Details'}</button>
+      <a class="act" href="https://editorial.rottentomatoes.com/guide/best-new-tv-series-shows/" target="_blank" rel="noopener">RT ↗</a>
+      <a class="act" href="https://www.imdb.com/find/?q=${encodeURIComponent(s.title)}" target="_blank" rel="noopener">IMDb ↗</a>
+    </div>`;
+  const details=`
+    <div class="details">
+      <p><strong>Where to watch:</strong> ${s.watch}</p>
+      <p><strong>IMDb note:</strong> ${s.imdbNote}</p>
+      <p><strong>Source:</strong> ${s.source}</p>
+    </div>`;
+  const head=`
+    <div class="cardHead">
+      <div class="titleBlock">
+        <h3>${s.title} <span style="color:var(--muted);font-weight:600;font-size:.78em">${s.season}</span></h3>
+        <div class="metarow">
+          <span class="platbadge" style="--pbg:${c.bg};--pfg:${c.fg}">${s.platform}</span>
+          <span>${s.kind}</span><span>·</span><span>${dt(s.premiere)}</span>
+        </div>
+      </div>
+      <div class="rankbadge">#${s.rank}</div>
+    </div>`;
+  if(top){
+    return `<article class="card top" style="animation-delay:${delay}s">
+      <div class="accent" style="background:${c.bg}"></div>
+      <div class="cardInner">
+        <div class="col-left">${head}${scoreBlock}<p class="summary">${s.summary}</p></div>
+        <div class="col-right">
+          <div class="whybox"><strong>Why it belongs</strong>${s.why}</div>
+          <div class="tags">${tags}</div>
+          ${actions}${details}
+        </div>
+      </div>
+    </article>`;
+  }
+  return `<article class="card" style="animation-delay:${delay}s">
+    <div class="accent" style="background:${c.bg}"></div>
+    <div class="cardInner">
+      ${head}${scoreBlock}
+      <p class="summary">${s.summary}</p>
+      <div class="whybox"><strong>Why it belongs</strong>${s.why}</div>
+      <div class="tags">${tags}</div>
+      ${actions}${details}
+    </div>
+  </article>`;
+}
+function render(){
+  const list=filtered();
+  E.cards.innerHTML=list.length
+    ?list.map((s,i)=>cardHtml(s,i)).join('')
+    :'<div class="empty"><h3>No matches</h3><p>Try adjusting your search or filters.</p></div>';
+  E.rTitle.textContent=`${list.length} recommendation${list.length===1?'':'s'}`;
+  E.rSub.textContent=favOnly?`Showing ${list.length} saved show${list.length===1?'':'s'}.`:'Tap any card to expand full details.';
+}
+function toggleDet(btn){
+  const card=btn.closest('.card');
+  card.classList.toggle('open');
+  btn.textContent=card.classList.contains('open')?'Hide':'Details';
+}
+function toggleFav(title,btn){
+  favs.has(title)?favs.delete(title):favs.add(title);
+  localStorage.setItem('tvFav26',JSON.stringify([...favs]));
+  btn.dataset.on=favs.has(title);
+  btn.textContent=favs.has(title)?'★ Saved':'☆ Save';
+  if(favOnly)render();
+}
+function toggleFavView(){
+  favOnly=!favOnly;
+  E.favBtn.classList.toggle('active',favOnly);
+  render();
+}
+function resetAll(){
+  favOnly=false;
+  E.search.value='';E.platform.value='';E.kind.value='';E.tone.value='';E.sort.value='rank';
+  E.favBtn.classList.remove('active');
+  document.querySelectorAll('.pchip').forEach((c,i)=>c.classList.toggle('on',i===0));
+  render();
+}
+function toggleTheme(){
+  document.body.classList.toggle('light');
+  const light=document.body.classList.contains('light');
+  localStorage.setItem('tvTheme26',light?'light':'dark');
+  E.themeBtn.textContent=light?'☀️ Light':'🌙 Dark';
+}
+function copyTop10(){
+  const text=filtered().slice(0,10).map(s=>`${s.rank}. ${s.title} (${s.season}) — RT ${fmt(s.rt)}, Audience ${fmt(s.audience)}, IMDb ${s.imdb} — ${s.watch}`).join('\n');
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=document.querySelector('[onclick="copyTop10()"]');
+    const orig=btn.textContent;btn.textContent='✓ Copied!';
+    setTimeout(()=>btn.textContent=orig,2000);
+  });
+}
+[E.search,E.platform,E.kind,E.tone,E.sort].forEach(el=>el.addEventListener('input',render));
+if(localStorage.getItem('tvTheme26')==='light'){document.body.classList.add('light');E.themeBtn.textContent='☀️ Light';}
+populateFilters();render();
+
+</script>
+</body>
+</html>
