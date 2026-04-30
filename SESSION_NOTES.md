@@ -41,3 +41,15 @@ Built and deployed the Prestige TV Finder 2026 app from scratch, starting from a
 **What's next:**
 - Nothing pending. App is complete.
 - If Arnie wants to add new shows for May-June 2026 window, just edit the SHOWS array in index.html, git push, Netlify rebuilds automatically.
+
+## Session — 2026-04-29 (Session 2)
+
+**What we did:**
+Renamed the main h1 headline from "Stop scrolling. Start watching." to "Prestige TV Finder". Updated the kicker badge from "🎬 Prestige TV Finder · Updated April 28, 2026" to "🎬 2026 Edition · Updated April 28, 2026" (to avoid redundancy since the h1 is now the app name). Searched entire codebase — no other instances of "Stop scrolling" or "Start watching" found. Pushed to GitHub, confirmed live on Netlify. Replaced old gallery screenshot with new one showing the updated headline.
+
+**What's working:**
+- h1 now reads "Prestige TV Finder" — live at https://prestige-tv-finder-2026.netlify.app
+- Gallery (arnies-app-showcase) updated with fresh screenshot
+
+**What's next:**
+- Nothing pending. App is complete.
