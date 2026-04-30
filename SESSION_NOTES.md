@@ -53,3 +53,16 @@ Renamed the main h1 headline from "Stop scrolling. Start watching." to "Prestige
 
 **What's next:**
 - Nothing pending. App is complete.
+
+## Session — 2026-04-29 (Session 3)
+
+**What we did:**
+Widened the layout from 1200px to 1600px max-width. Updated all three width-constrained elements (.wrap, .toolbarInner, .pchips). Changed the card grid from 2-per-row (span 6) to 3-per-row (span 4) on wide screens, with a new 1100px breakpoint that drops back to 2-per-row on medium screens. Pushed to GitHub, confirmed live on Netlify (.wrap measured at exactly 1600px). Updated gallery screenshot. Desktop URL shortcut verified.
+
+**What's working:**
+- Layout fills ~83% of a 1920px screen (was ~62%)
+- 3 cards per row on desktop, 2 on tablet, 1 on mobile
+- All confirmed live at https://prestige-tv-finder-2026.netlify.app
+
+**What's next:**
+- Nothing pending. App is complete.
